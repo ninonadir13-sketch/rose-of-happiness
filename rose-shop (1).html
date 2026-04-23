@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" id="HR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+<title>Röse DZ</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;700&family=Tajawal:wght@300;400;500;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--g1:#1b4332;--g2:#2d6a4f;--g3:#52b788;--pale:#f0f7f3;--border:#b7dfc9;--gold:#c9973b;--gold2:#e8c46a;--white:#fafcfb;--dark:#0d2118;--text:#1a2f23;--gray:#5a7868;--pink:#d81b60;--red:#c62828}
+*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html[dir=ltr]{direction:ltr}
+body{font-family:'Tajawal',sans-serif;background:var(--white);color:var(--text);max-width:430px;margin:0 auto;min-height:100vh;overflow-x:hidden}
+html[dir=ltr] body{font-family:'Montserrat',sans-serif}
+.nav{position:fixed;top:0;width:100%;max-width:430px;z-index:200;background:rgba(250,252,251,.97);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;padding:11px 14px;gap:8px}
+.logo{font-family:'Cormorant Garamond',serif;font-size:21px;font-weight:700;color:var(--g1);letter-spacing:1px;line-height:1}
+.logo span{color:var(--gold)}.logo small{font-size:9px;display:block;color:var(--gray);letter-spacing:2px;font-family:'Tajawal',sans-serif;font-weight:400}
+.nav-r{display:flex;gap:9px;align-items:center}
+.nb{background:none;border:none;cursor:pointer;font-size:19px;color:var(--text);position:relative;padding:3px;transition:transform .2s}
+.nb:active{transform:scale(.82)}
+.bdg{position:absolute;top:-5px;right:-5px;background:var(--pink);color:#fff;font-size:9px;width:15px;height:15px;border-radius:50%;display:none;align-items:center;justify-content:center;font-family:'Montserrat',sans-serif;font-weight:700}
+.lbtn{background:var(--g1);color:#fff;border:none;cursor:pointer;padding:5px 9px;border-radius:18px;font-size:10px;font-weight:700;font-family:'Montserrat',sans-serif}
+.sc{display:none;padding:70px 0 80px;min-height:100vh}.sc.on{display:block}
+.hero{background:linear-gradient(148deg,#0d2118 0%,#1b4332 48%,#2d6a4f 78%,#52b788 100%);padding:32px 18px 44px;position:relative;overflow:hidden}
+.hero::before{content:'🌸';font-size:180px;position:absolute;right:-25px;top:-15px;opacity:.06;transform:rotate(14deg);pointer-events:none}
+.hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:38px;background:var(--white);border-radius:38px 38px 0 0}
+.htag{display:inline-block;background:rgba(232,196,106,.18);border:1px solid var(--gold2);color:var(--gold2);padding:4px 13px;border-radius:18px;font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:12px}
+.hero h1{font-family:'Cormorant Garamond',serif;color:#fff;font-size:36px;font-weight:700;line-height:1.1;margin-bottom:7px}
+.hero p{color:rgba(255,255,255,.72);font-size:12px;margin-bottom:18px}
+.hbtns{display:flex;gap:9px;flex-wrap:wrap;position:relative;z-index:1}
+.hbp{background:var(--gold);color:var(--dark);border:none;padding:11px 22px;border-radius:28px;font-size:13px;font-weight:700;cursor:pointer;font-family:inherit;box-shadow:0 5px 20px rgba(201,151,59,.35);transition:transform .2s}
+.hbp:active{transform:scale(.95)}
+.hbo{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.38);padding:11px 18px;border-radius:28px;font-size:12px;font-weight:600;cursor:pointer;font-family:inherit}
+.promo{margin:14px 12px;background:linear-gradient(120deg,var(--gold),#e8c46a);border-radius:14px;padding:12px 16px;display:flex;align-items:center;gap:10px}
+.promo-i{font-size:26px}.promo-t{font-size:12px;font-weight:700;color:var(--dark)}
+.promo-t span{display:block;font-size:10px;font-weight:400;opacity:.75;margin-top:1px}
+.sec{font-family:'Cormorant Garamond',serif;font-size:21px;font-weight:700;color:var(--g1);padding:18px 16px 10px;display:flex;align-items:center;justify-content:space-between}
+.sea{font-size:11px;color:var(--g3);font-weight:600;cursor:pointer;font-family:'Tajawal','Montserrat',sans-serif;background:none;border:none}
+.chips{display:flex;gap:7px;padding:0 14px 12px;overflow-x:auto}.chips::-webkit-scrollbar{display:none}
+.chip{flex-shrink:0;padding:6px 14px;border-radius:18px;cursor:pointer;border:1.5px solid var(--border);background:#fff;font-size:11px;color:var(--gray);font-weight:600;transition:all .2s;font-family:inherit;white-space:nowrap}
+.chip.on{background:var(--g1);border-color:var(--g1);color:#fff}
+.pgrid{display:grid;grid-template-columns:1fr 1fr;gap:11px;padding:0 11px}
+.pc{background:#fff;border-radius:15px;border:1px solid var(--border);overflow:hidden;cursor:pointer;transition:transform .18s;box-shadow:0 2px 10px rgba(27,67,50,.06)}
+.pc:active{transform:scale(.97)}
+.pc-img{width:100%;aspect-ratio:1;display:flex;align-items:center;justify-content:center;font-size:52px;position:relative;overflow:hidden;background:linear-gradient(135deg,var(--pale),#dff0e8)}
+.pc-img img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0}
+.pbdg{position:absolute;top:7px;right:7px;background:var(--pink);color:#fff;font-size:8px;font-weight:700;padding:2px 6px;border-radius:8px;font-family:'Montserrat',sans-serif;z-index:1}
+html[dir=ltr] .pbdg{right:auto;left:7px}
+.pc-body{padding:9px 9px 11px}.pc-name{font-size:11px;font-weight:700;color:var(--text);margin-bottom:1px}
+.pc-sub{font-size:9px;color:var(--gray);margin-bottom:7px;line-height:1.3}
+.pc-ft{display:flex;align-items:center;justify-content:space-between}
+.pc-price{font-size:12px;font-weight:700;color:var(--g2)}
+.pc-add{width:26px;height:26px;border-radius:50%;background:var(--g1);border:none;color:#fff;font-size:15px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:transform .15s}
+.pc-add:active{transform:scale(.78)}
+.wcards{padding:0 11px;display:flex;flex-direction:column;gap:11px}
+.wc{background:linear-gradient(130deg,var(--dark),var(--g1));border-radius:18px;padding:16px;color:#fff;display:flex;align-items:center;gap:12px;cursor:pointer;position:relative;overflow:hidden;transition:transform .2s}
+.wc:active{transform:scale(.98)}
+.wc::before{content:attr(data-icon);font-size:80px;position:absolute;right:-8px;bottom:-8px;opacity:.07}
+html[dir=ltr] .wc::before{right:auto;left:-8px}
+.wc-i{font-size:42px;flex-shrink:0}.wc-b{flex:1;min-width:0}
+.wc-n{font-family:'Cormorant Garamond',serif;font-size:17px;font-weight:700;margin-bottom:2px}
+.wc-d{font-size:10px;opacity:.72;line-height:1.4}.wc-p{font-size:12px;font-weight:700;color:var(--gold2);margin-top:5px}
+.wc-btn{background:var(--gold);color:var(--dark);border:none;padding:7px 12px;border-radius:18px;font-size:10px;font-weight:700;cursor:pointer;font-family:inherit;flex-shrink:0}
+.cempty{text-align:center;padding:55px 18px;color:var(--gray)}.cempty .ei{font-size:60px;margin-bottom:14px}
+.clist{padding:0 11px;display:flex;flex-direction:column;gap:9px}
+.crow{background:#fff;border-radius:13px;padding:11px;display:flex;align-items:center;gap:9px;border:1px solid var(--border)}
+.crow-img{width:52px;height:52px;border-radius:10px;overflow:hidden;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:32px;background:var(--pale)}
+.crow-img img{width:100%;height:100%;object-fit:cover}
+.crow-info{flex:1}.crow-n{font-size:12px;font-weight:700}.crow-p{font-size:11px;color:var(--g2);margin-top:1px}
+.qw{display:flex;align-items:center;gap:7px}
+.qb{width:22px;height:22px;border-radius:50%;border:1.5px solid var(--border);background:#fff;color:var(--g1);font-size:13px;cursor:pointer;display:flex;align-items:center;justify-content:center}
+.qn{font-weight:700;font-size:13px;min-width:14px;text-align:center}
+.dpick{margin:12px 11px}.dpick-t{font-size:12px;font-weight:700;color:var(--g1);margin-bottom:7px}
+.drow{display:flex;gap:7px;overflow-x:auto;padding-bottom:3px}.drow::-webkit-scrollbar{display:none}
+.dchip{flex-shrink:0;padding:7px 11px;border-radius:12px;cursor:pointer;border:1.5px solid var(--border);background:#fff;font-size:10px;color:var(--gray);font-weight:600;transition:all .2s;font-family:inherit;text-align:center;line-height:1.4;min-width:70px}
+.dchip.on{background:var(--g1);border-color:var(--g1);color:#fff}
+.pay-sec{margin:12px 11px}.pay-t{font-size:12px;font-weight:700;color:var(--g1);margin-bottom:8px}
+.pay-opts{display:flex;gap:8px}
+.pay-opt{flex:1;padding:12px 8px;border-radius:13px;border:1.5px solid var(--border);background:#fff;cursor:pointer;text-align:center;transition:all .2s;font-family:inherit}
+.pay-opt.on{border-color:var(--g1);background:var(--pale)}
+.pay-opt .poi{font-size:22px;margin-bottom:3px}.pay-opt .pot{font-size:10px;font-weight:700;color:var(--text)}.pay-opt .pos{font-size:9px;color:var(--gray);margin-top:1px}
+.cs{margin:12px 11px;background:linear-gradient(135deg,var(--g1),var(--g3));border-radius:16px;padding:16px;color:#fff}
+.csr{display:flex;justify-content:space-between;margin-bottom:5px;font-size:12px}
+.csr.tot{font-size:16px;font-weight:700;margin-top:9px;padding-top:9px;border-top:1px solid rgba(255,255,255,.22)}
+.csbtn{width:100%;background:#fff;color:var(--g1);border:none;padding:13px;border-radius:12px;font-size:14px;font-weight:700;font-family:inherit;cursor:pointer;margin-top:11px}
+.wabtn{display:flex;align-items:center;gap:8px;background:#25D366;color:#fff;border:none;padding:12px 18px;border-radius:13px;font-size:13px;font-weight:700;cursor:pointer;font-family:inherit;width:100%;justify-content:center;margin:10px 0}
+.cclist{padding:0 11px;display:flex;flex-direction:column;gap:9px}
+.ccard{background:#fff;border-radius:13px;padding:14px;display:flex;align-items:center;gap:11px;border:1px solid var(--border);cursor:pointer;text-decoration:none;color:inherit;transition:transform .18s}
+.ccard:active{transform:scale(.97)}
+.cico{width:42px;height:42px;border-radius:11px;display:flex;align-items:center;justify-content:center;font-size:19px}
+.cico.g{background:#e8f5e9}.cico.p{background:#fce4ec}.cico.b{background:#e3f2fd}.cico.y{background:#fff8e1}
+.clbl{font-size:10px;color:var(--gray)}.cval{font-size:13px;font-weight:700;margin-top:1px}
+.hbox{margin:16px 11px 0;background:var(--pale);border-radius:13px;padding:14px;border:1.5px solid var(--border)}
+.hboxh{font-weight:700;color:var(--g1);margin-bottom:9px}.hrow{display:flex;justify-content:space-between;font-size:12px;margin-bottom:4px}
+.toast{position:fixed;bottom:86px;left:50%;transform:translateX(-50%) translateY(14px);background:var(--dark);color:#fff;padding:9px 20px;border-radius:28px;font-size:11px;opacity:0;pointer-events:none;transition:all .3s;white-space:nowrap;z-index:999;max-width:86vw;text-align:center}
+.toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+.bnav{position:fixed;bottom:0;width:100%;max-width:430px;background:#fff;border-top:1px solid var(--border);display:flex;z-index:200;padding-bottom:env(safe-area-inset-bottom)}
+.bni{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:8px 2px;cursor:pointer;border:none;background:none;font-family:inherit;color:var(--gray);font-size:9px;gap:2px;transition:color .2s}
+.bni .ico{font-size:19px}.bni.on{color:var(--g1)}
+.ov{position:fixed;inset:0;background:rgba(0,0,0,.55);z-index:300;display:none;align-items:flex-end}
+.ov.open{display:flex}
+.modal{background:#fff;width:100%;border-radius:24px 24px 0 0;padding:20px;max-height:90vh;overflow-y:auto;animation:su .3s cubic-bezier(.32,.72,0,1)}
+@keyframes su{from{transform:translateY(100%)}to{transform:translateY(0)}}
+.mh{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px}
+.mt{font-family:'Cormorant Garamond',serif;font-size:21px;font-weight:700;color:var(--g1)}
+.mx{background:var(--pale);border:none;width:28px;height:28px;border-radius:50%;font-size:15px;cursor:pointer;color:var(--text)}
+.mi{width:100%;border-radius:16px;margin-bottom:12px;background:var(--pale);min-height:180px;display:flex;align-items:center;justify-content:center;font-size:70px;overflow:hidden}
+.mi img{width:100%;max-height:240px;object-fit:cover;border-radius:16px}
+.md{color:var(--gray);font-size:12px;line-height:1.7;margin-bottom:12px}
+.mp{font-size:22px;font-weight:700;color:var(--g2);margin-bottom:14px}
+.mcta{width:100%;background:var(--g1);color:#fff;border:none;padding:14px;border-radius:13px;font-size:14px;font-weight:700;font-family:inherit;cursor:pointer}
+.oov{position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:400;display:none;align-items:center;justify-content:center;padding:18px}
+.oov.open{display:flex}
+.obox{background:#fff;border-radius:22px;padding:26px 20px;text-align:center;width:100%;max-width:330px;animation:pop .3s cubic-bezier(.34,1.56,.64,1)}
+@keyframes pop{from{transform:scale(.8);opacity:0}to{transform:scale(1);opacity:1}}
+.oico{font-size:60px;margin-bottom:12px}.otit{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:700;color:var(--g1);margin-bottom:7px}
+.osub{font-size:12px;color:var(--gray);margin-bottom:18px;line-height:1.5}
+.ocls{background:var(--g1);color:#fff;border:none;padding:12px 30px;border-radius:28px;font-size:13px;font-weight:700;font-family:inherit;cursor:pointer}
+</style>
+</head>
+<body>
+<div class="nav">
+  <div class="logo">Röse<span>✦</span><small id="ns">محل الورود والهدايا</small></div>
+  <div class="nav-r">
+    <button class="lbtn" onclick="tgl()" id="lb">EN</button>
+    <button class="nb" onclick="go('cart')">🛒<span class="bdg" id="cb">0</span></button>
+  </div>
+</div>
+<div class="toast" id="toast"></div>
+<div class="oov" id="OV">
+  <div class="obox">
+    <div class="oico">🎉</div>
+    <div class="otit" id="OT">تم إرسال طلبك!</div>
+    <div class="osub" id="OS">سيتواصل معك فريقنا قريباً عبر واتساب لتأكيد الطلب.</div>
+    <button class="ocls" onclick="clOrd()" id="OC">حسناً</button>
+  </div>
+</div>
+<!-- HOME -->
+<div class="sc on" id="sc-home">
+  <div class="hero">
+    <div class="htag" id="HT">🌿 الأصالة والجمال</div>
+    <h1 id="HH">الورود<br>الفاخرة</h1>
+    <p id="HP">من باقات الحب إلى تنظيم المناسبات — كل ما تحتاجه</p>
+    <div class="hbtns">
+      <button class="hbp" onclick="go('products')" id="HB1">تسوّق الآن</button>
+      <button class="hbo" onclick="go('events')" id="HB2">تنظيم المناسبات</button>
+    </div>
+  </div>
+  <div class="promo" style="margin-top:14px">
+    <div class="promo-i">🚀</div>
+    <div class="promo-t" id="PT">توصيل في 5 أوقات يومياً<span id="PS">من 7:00 صباحاً حتى 12:00 منتصف الليل</span></div>
+  </div>
+  <div class="sec"><span id="HC">الفئات</span></div>
+  <div class="chips" id="hch">
+    <div class="chip on" onclick="fH('all',this)" data-ar="الكل" data-en="All">الكل</div>
+    <div class="chip" onclick="fH('bouquets',this)" data-ar="باقات" data-en="Bouquets">باقات</div>
+    <div class="chip" onclick="fH('roses',this)" data-ar="ورود" data-en="Roses">ورود</div>
+    <div class="chip" onclick="fH('gifts',this)" data-ar="هدايا" data-en="Gifts">هدايا</div>
+    <div class="chip" onclick="fH('balloons',this)" data-ar="بالونات" data-en="Balloons">بالونات</div>
+    <div class="chip" onclick="fH('lilies',this)" data-ar="زنابق" data-en="Lilies">زنابق</div>
+  </div>
+  <div class="pgrid" id="HG"></div>
+  <div class="sec" style="margin-top:4px"><span id="HPT">الباقات المميزة</span><button class="sea" onclick="go('packages')" id="SA">عرض الكل</button></div>
+  <div class="wcards" id="HPK"></div>
+  <div style="height:18px"></div>
+</div>
+<!-- PRODUCTS -->
+<div class="sc" id="sc-products">
+  <div class="sec"><span id="PT2">جميع المنتجات</span></div>
+  <div class="chips" id="pch">
+    <div class="chip on" onclick="fP('all',this)" data-ar="الكل" data-en="All">الكل</div>
+    <div class="chip" onclick="fP('bouquets',this)" data-ar="باقات" data-en="Bouquets">باقات</div>
+    <div class="chip" onclick="fP('roses',this)" data-ar="ورود" data-en="Roses">ورود</div>
+    <div class="chip" onclick="fP('gifts',this)" data-ar="هدايا" data-en="Gifts">هدايا</div>
+    <div class="chip" onclick="fP('balloons',this)" data-ar="بالونات" data-en="Balloons">بالونات</div>
+    <div class="chip" onclick="fP('lilies',this)" data-ar="زنابق" data-en="Lilies">زنابق</div>
+  </div>
+  <div class="pgrid" id="PG"></div>
+  <div style="height:18px"></div>
+</div>
+<!-- PACKAGES -->
+<div class="sc" id="sc-packages">
+  <div class="sec"><span id="PKT">الباقات الخاصة</span></div>
+  <div class="wcards" id="PKL"></div>
+  <div style="height:18px"></div>
+</div>
+<!-- EVENTS -->
+<div class="sc" id="sc-events">
+  <div class="sec"><span id="EVT">تنظيم الأعياد والمناسبات</span></div>
+  <div class="wcards" id="EVL"></div>
+  <div class="sec" style="margin-top:6px"><span id="EVW">تنظيم الأعراس</span></div>
+  <div class="wcards" id="EVW2"></div>
+  <div style="height:18px"></div>
+</div>
+<!-- CART -->
+<div class="sc" id="sc-cart">
+  <div class="sec"><span id="CT">سلة التسوق</span></div>
+  <div id="cartC"></div>
+</div>
+<!-- CONTACT -->
+<div class="sc" id="sc-contact">
+  <div class="sec"><span id="CNT">تواصل معنا</span></div>
+  <div class="cclist">
+    <a class="ccard" href="https://wa.me/97431395338" target="_blank">
+      <div class="cico y">💬</div>
+      <div><div class="clbl" id="cl1">واتساب — تواصل فوري</div><div class="cval">+974 31 395 338</div></div>
+    </a>
+    <a class="ccard" href="tel:+97431395338">
+      <div class="cico g">📞</div>
+      <div><div class="clbl" id="cl2">اتصل بنا</div><div class="cval">+974 31 395 338</div></div>
+    </a>
+    <a class="ccard" href="#">
+      <div class="cico p">📸</div>
+      <div><div class="clbl" id="cl3">انستغرام</div><div class="cval">@rose_dz</div></div>
+    </a>
+    <a class="ccard" href="#">
+      <div class="cico b">📍</div>
+      <div><div class="clbl" id="cl4">الموقع</div><div class="cval" id="cv4">الجزائر العاصمة، حي بن عكنون</div></div>
+    </a>
+  </div>
+  <div class="hbox">
+    <div class="hboxh" id="HH2">🕐 أوقات العمل</div>
+    <div class="hrow"><span id="D1">الأحد – الخميس</span><span>8:00 ص – 11:00 م</span></div>
+    <div class="hrow"><span id="D2">الجمعة</span><span>2:00 م – 11:00 م</span></div>
+    <div class="hrow"><span id="D3">السبت</span><span>8:00 ص – 12:00 م</span></div>
+  </div>
+  <div style="height:18px"></div>
+</div>
+<div class="bnav">
+  <button class="bni on" id="bn-home" onclick="go('home')"><span class="ico">🏠</span><span id="BN1">الرئيسية</span></button>
+  <button class="bni" id="bn-products" onclick="go('products')"><span class="ico">🌹</span><span id="BN2">المنتجات</span></button>
+  <button class="bni" id="bn-packages" onclick="go('packages')"><span class="ico">🎁</span><span id="BN3">الباقات</span></button>
+  <button class="bni" id="bn-events" onclick="go('events')"><span class="ico">🎊</span><span id="BN4">مناسبات</span></button>
+  <button class="bni" id="bn-contact" onclick="go('contact')"><span class="ico">📞</span><span id="BN5">تواصل</span></button>
+</div>
+<div class="ov" id="POV" onclick="clMod(event)">
+  <div class="modal">
+    <div class="mh"><div class="mt" id="MT"></div><button class="mx" onclick="clMod()">✕</button></div>
+    <div class="mi" id="MI"></div>
+    <div class="md" id="MD"></div>
+    <div class="mp" id="MP"></div>
+    <button class="mcta" id="MC"></button>
+  </div>
+</div>
+<script>
+const TX={
+  ar:{dir:'rtl',lang:'ar',ns:'محل الورود والهدايا',HT:'🌿 الأصالة والجمال',HH:'الورود<br>الفاخرة',HP:'من باقات الحب إلى تنظيم المناسبات — كل ما تحتاجه',HB1:'تسوّق الآن',HB2:'تنظيم المناسبات',PT:'توصيل في 5 أوقات يومياً',PS:'من 7:00 صباحاً حتى 12:00 منتصف الليل',HC:'الفئات',HPT:'الباقات المميزة',SA:'عرض الكل',PT2:'جميع المنتجات',PKT:'الباقات الخاصة',EVT:'تنظيم الأعياد والمناسبات',EVW:'تنظيم الأعراس',CT:'سلة التسوق',CNT:'تواصل معنا',cl1:'واتساب — تواصل فوري',cl2:'اتصل بنا',cl3:'انستغرام',cl4:'الموقع',cv4:'الجزائر العاصمة، حي بن عكنون',HH2:'🕐 أوقات العمل',D1:'الأحد – الخميس',D2:'الجمعة',D3:'السبت',BN1:'الرئيسية',BN2:'المنتجات',BN3:'الباقات',BN4:'مناسبات',BN5:'تواصل',addC:'أضف للسلة 🛒',book:'احجز',dpT:'وقت التوصيل',payT:'طريقة الدفع',cash:'عند التوصيل',cashS:'ادفع نقداً',online:'أونلاين',onlineS:'دفع إلكتروني',sub:'المجموع',del:'التوصيل',tot:'الإجمالي',checkout:'إتمام الطلب ✨',ec:'سلتك فارغة',ecs:'أضف منتجات للبدء',OT:'تم إرسال طلبك! 🎉',OS:'سيتواصل معك فريقنا قريباً عبر واتساب.',OC:'حسناً',ta:'تمت الإضافة',tb:'سيتم التواصل معك لحجز',dzd:'د.ج',lb:'EN',waBtn:'تواصل عبر واتساب'},
+  en:{dir:'ltr',lang:'en',ns:'Flowers & Gifts',HT:'🌿 Elegance & Freshness',HH:'Luxury<br>Flowers',HP:'From love bouquets to event planning — everything at your fingertips',HB1:'Shop Now',HB2:'Plan an Event',PT:'Delivery in 5 daily slots',PS:'From 7:00 AM until 12:00 Midnight',HC:'Categories',HPT:'Featured Packages',SA:'See All',PT2:'All Products',PKT:'Special Packages',EVT:'Events & Occasions',EVW:'Wedding Planning',CT:'Shopping Cart',CNT:'Contact Us',cl1:'WhatsApp — Instant Chat',cl2:'Call Us',cl3:'Instagram',cl4:'Location',cv4:'Algiers, Ben Aknoun',HH2:'🕐 Working Hours',D1:'Sun – Thu',D2:'Friday',D3:'Saturday',BN1:'Home',BN2:'Products',BN3:'Packages',BN4:'Events',BN5:'Contact',addC:'Add to Cart 🛒',book:'Book',dpT:'Delivery Time',payT:'Payment Method',cash:'Cash on Delivery',cashS:'Pay when delivered',online:'Online',onlineS:'Card / e-payment',sub:'Subtotal',del:'Delivery',tot:'Total',checkout:'Place Order ✨',ec:'Your cart is empty',ecs:'Add products to get started',OT:'Order Placed! 🎉',OS:'Our team will contact you shortly via WhatsApp.',OC:'OK',ta:'Added',tb:'We will contact you to book',dzd:'DZD',lb:'عر',waBtn:'Chat on WhatsApp'}
+};
+const PRODS=[
+  {id:1,img:'WhatsApp_Image_2026-04-22_at_1_39_04_PM.jpeg',cat:'bouquets',b:'⭐',ar:{n:'باقة ورود وردية — FNP',d:'7 ورود وردية طازجة مع أوراق الإيكاليبتوس، تغليف كريمي مميز وشريط وردي'},en:{n:'Pink Roses Bouquet — FNP',d:'7 fresh pink roses with eucalyptus, elegant cream wrapping & pink ribbon'},p:5250},
+  {id:2,img:'WhatsApp_Image_2026-04-22_at_3_11_16_PM.jpeg',cat:'bouquets',ar:{n:'باقة مختلطة فاخرة',d:'ورود حمراء + بيضاء + قرنفل وردي + بابي بريذ + إيكاليبتوس'},en:{n:'Luxury Mixed Bouquet',d:'Red & white roses + pink carnations + baby\'s breath + eucalyptus'},p:7500},
+  {id:3,img:'WhatsApp_Image_2026-04-22_at_3_17_29_PM.jpeg',cat:'gifts',b:'⭐',ar:{n:'وردة محفوظة + عطر فاخر',d:'وردة حمراء محفوظة مع عطر بيراميد الشرقي وزهور مجففة، قبة زجاجية أنيقة'},en:{n:'Forever Rose + Luxury Perfume',d:'Preserved red rose with oriental perfume & dried flowers under glass dome'},p:18500},
+  {id:4,img:'WhatsApp_Image_2026-04-22_at_3_22_04_PM.jpeg',cat:'gifts',ar:{n:'ورود عيد ميلاد — ماغ',d:'ورود وردية + كريزانثيم بنفسجي في ماغ Happy Birthday مطبوع'},en:{n:'Birthday Flowers Mug',d:'Pink roses + purple chrysanthemums in a printed Happy Birthday mug'},p:6800},
+  {id:5,img:'WhatsApp_Image_2026-04-22_at_3_42_17_PM.jpeg',cat:'gifts',b:'NEW',ar:{n:'باقة فيريرو روشيه',d:'16 حبة فيريرو روشيه في باقة ورق وردي مزيّنة بشريط ذهبي'},en:{n:'Ferrero Rocher Bouquet',d:'16 Ferrero Rocher in pink paper bouquet with golden ribbon'},p:9500},
+  {id:6,img:'WhatsApp_Image_2026-04-22_at_4_03_56_PM.jpeg',cat:'roses',b:'⭐',ar:{n:'30 وردة وردية — كلاسيك',d:'30 وردة وردية طازجة مُربوطة بشريط قش طبيعي — أناقة بلا تغليف'},en:{n:'30 Pink Roses — Classic',d:'30 fresh pink roses tied with natural raffia ribbon'},p:19500},
+  {id:7,img:'WhatsApp_Image_2026-04-22_at_4_20_21_PM.jpeg',cat:'gifts',b:'⭐',ar:{n:'علبة ورود بيضاء + كيكة',d:'علبة FNP السوداء بورود بيضاء فاخرة + كيكة ريد فيلفيت بالفراولة'},en:{n:'White Flowers Box + Cake',d:'FNP black box with white luxury roses + strawberry red velvet cake'},p:28000},
+  {id:8,img:'WhatsApp_Image_2026-04-22_at_4_38_58_PM.jpeg',cat:'bouquets',ar:{n:'باقة ورود بنفسجية — Floward',d:'20+ وردة بنفسجية Baby Rose في تغليف وردي فاتح وذهبي'},en:{n:'Lavender Roses Bouquet — Floward',d:'20+ purple Baby Roses in light pink & gold wrapping'},p:11500},
+  {id:9,img:'WhatsApp_Image_2026-04-22_at_4_39_19_PM.jpeg',cat:'bouquets',b:'⭐',ar:{n:'ورود حمراء + بابي بريذ — FNP',d:'5 ورود حمراء مع Baby\'s Breath أبيض وبنفسجي، تغليف زهري'},en:{n:'Red Roses + Baby\'s Breath — FNP',d:'5 red roses with white & purple baby\'s breath, pink wrapping'},p:8500},
+  {id:10,img:'WhatsApp_Image_2026-04-22_at_5_01_05_PM.jpeg',cat:'bouquets',ar:{n:'ورود حمراء — تغليف أسود فاخر',d:'4 ورود حمراء فاخرة مع إيكاليبتوس في تغليف أسود وأبيض مع شريط أحمر'},en:{n:'Red Roses — Black Luxury Wrap',d:'4 premium red roses with eucalyptus, black & white wrapping, red ribbon'},p:7200},
+  {id:11,img:'WhatsApp_Image_2026-04-22_at_5_02_58_PM.jpeg',cat:'gifts',b:'NEW',ar:{n:'باقة ورود + عطر Lattafa Khamrah',d:'باقة ورود بيضاء وكريمية في تغليف ذهبي مع عطر خمرة Lattafa الفاخر'},en:{n:'Bouquet + Lattafa Khamrah Perfume',d:'White & cream roses in golden wrapping with luxury Lattafa Khamrah perfume'},p:22000},
+  {id:12,img:'WhatsApp_Image_2026-04-22_at_5_08_23_PM.jpeg',cat:'gifts',b:'⭐',ar:{n:'باقة وردية + علبة شوكولاتة',d:'باقة ورود وردية وقرنفل في تغليف ليلاكي + علبة شوكولاتة 25 قطعة'},en:{n:'Pink Bouquet + Chocolate Box',d:'Pink roses & carnations in lilac wrapping + 25-piece premium chocolate box'},p:16500},
+  {id:13,img:'WhatsApp_Image_2026-04-22_at_5_23_53_PM.jpeg',cat:'bouquets',b:'NEW',ar:{n:'باقة ورود وردية — تغليف أخضر ذهبي',d:'20+ وردة وردية Baby Rose في تغليف نعناعي شفاف مع حواف ذهبية'},en:{n:'Pink Roses — Mint Gold Wrap',d:'20+ pink Baby Roses in mint transparent wrapping with golden edges'},p:12500},
+  {id:14,img:'WhatsApp_Image_2026-04-22_at_5_29_31_PM.jpeg',cat:'bouquets',ar:{n:'ورود وردية + بابي بريذ أزرق',d:'3 ورود وردية مع Baby\'s Breath الأزرق الناعم — مثالية للمواليد'},en:{n:'Pink Roses + Blue Baby\'s Breath',d:'3 pink roses with soft blue baby\'s breath — perfect for new baby'},p:4500},
+  {id:15,img:'WhatsApp_Image_2026-04-22_at_5_29_43_PM.jpeg',cat:'balloons',ar:{n:'بالون Baby Boy',d:'بالون فويل دائري أزرق — Baby Boy — مثالي للتهنئة بالمولود الذكر'},en:{n:'Baby Boy Balloon',d:'Round blue foil balloon — Baby Boy — perfect for newborn celebration'},p:1500},
+  {id:16,img:'WhatsApp_Image_2026-04-22_at_5_29_57_PM.jpeg',cat:'balloons',ar:{n:'بالون Baby Girl',d:'بالون فويل دائري وردي — Baby Girl — مثالي للتهنئة بالمولودة'},en:{n:'Baby Girl Balloon',d:'Round pink foil balloon — Baby Girl — perfect for newborn girl celebration'},p:1500},
+  {id:17,img:'WhatsApp_Image_2026-04-22_at_6_50_22_PM.jpeg',cat:'bouquets',b:'⭐',ar:{n:'باقة مختلطة برتقالية — FNP',d:'باقة كبيرة من ورود برتقالية + بيضاء + وردية فوشيا في تغليف كريمي'},en:{n:'Mixed Orange White Pink — FNP',d:'Large bouquet of orange + white + fuchsia roses in cream wrapping'},p:14500},
+  {id:18,img:'WhatsApp_Image_2026-04-22_at_7_03_41_PM.jpeg',cat:'roses',ar:{n:'ورود صفراء Baby — تغليف أسود',d:'ورود صفراء صغيرة Baby Rose في تغليف أسود وبيج مع ربطة خيطية طبيعية'},en:{n:'Yellow Baby Roses — Black Wrap',d:'Small yellow Baby Roses in black & beige wrapping with natural twine'},p:7800},
+  {id:19,img:'WhatsApp_Image_2026-04-22_at_7_13_31_PM.jpeg',cat:'lilies',b:'⭐',ar:{n:'باقة زنابق بيضاء فاخرة',d:'6 زنابق بيضاء طازجة مع إيكاليبتوس وبابي بريذ في تغليف أبيض/أسود'},en:{n:'White Lilies Luxury Bouquet',d:'6 fresh white lilies with eucalyptus & baby\'s breath in white/black wrap'},p:13500},
+  {id:20,img:'WhatsApp_Image_2026-04-22_at_4_20_42_PM.jpeg',cat:'gifts',ar:{n:'ورود عيد ميلاد — ماغ ٢',d:'ورود وردية + كريزانثيم + يانسيم في ماغ Happy Birthday مطبوع — نسخة مميزة'},en:{n:'Birthday Flowers Mug v2',d:'Pink roses + chrysanthemum arrangement in a Happy Birthday printed mug'},p:6800},
+];
+const PKGS=[
+  {id:'p1',e:'💝',icon:'💝',ar:{n:'باقة الرومانسية',d:'30 وردة حمراء + شوكولاتة فيريرو + كرت هدية + تغليف فاخر'},en:{n:'Romance Package',d:'30 red roses + Ferrero Rocher + gift card + luxury wrapping'},p:28000},
+  {id:'p2',e:'🎓',icon:'🎓',ar:{n:'باقة التخرّج',d:'باقة ورود ملونة + بالونات + كيكة تهنئة بالتخرّج'},en:{n:'Graduation Package',d:'Colourful bouquet + balloons + graduation cake'},p:18500},
+  {id:'p3',e:'🤰',icon:'🤰',ar:{n:'باقة المولودة الجديدة',d:'باقة ورود ناعمة + بالون Baby + دمية هدية'},en:{n:'New Baby Package',d:'Soft roses bouquet + Baby balloon + plush toy gift'},p:15000},
+  {id:'p4',e:'🌙',icon:'🌙',ar:{n:'باقة العيد',d:'ورود + حلوى شرقية + عطر شرقي + علبة هدية خاصة'},en:{n:'Eid Package',d:'Roses + oriental sweets + arabic perfume + special gift box'},p:21000},
+];
+const EVENTS=[
+  {id:'e1',e:'🎂',icon:'🎂',ar:{n:'تنظيم أعياد الميلاد',d:'تزيين المكان + باقات ورود + بالونات + كيكة + دعوات مخصصة'},en:{n:'Birthday Party Planning',d:'Venue decoration + flower bouquets + balloons + cake + invitations'},p:45000},
+  {id:'e2',e:'🏫',icon:'🏫',ar:{n:'حفلات التخرّج',d:'تنظيم كامل: تزيين + باقات التخرّج + بالونات + تصوير + هدايا'},en:{n:'Graduation Ceremonies',d:'Full organisation: decor + graduation bouquets + balloons + photography'},p:60000},
+  {id:'e3',e:'🎊',icon:'🎊',ar:{n:'المناسبات الخاصة',d:'عيد الأم، يوم المرأة، ذكرى الزواج — تنظيم متكامل وخصومت خاصة'},en:{n:'Special Occasions',d:"Mother's Day, Women's Day, anniversaries — full organisation"},p:35000},
+  {id:'e4',e:'🏢',icon:'🏢',ar:{n:'المناسبات الشركاتية',d:'تزيين مقرات الشركات، حفلات التدشين، المؤتمرات'},en:{n:'Corporate Events',d:'Office decoration, opening ceremonies, conferences'},p:80000},
+];
+const WEDDINGS=[
+  {id:'w1',e:'💒',icon:'💒',ar:{n:'تنظيم حفل عرس كامل',d:'تزيين القاعة + باقة العروس + مدخل + طاولات + أزهار الطريق الملكي'},en:{n:'Full Wedding Package',d:'Hall decor + bridal bouquet + entrance + tables + aisle flowers'},p:380000},
+  {id:'w2',e:'👰',icon:'👰',ar:{n:'باقة العروس الملكية',d:'باقة عروس فاخرة + إكليل رأس + ورود التثبيت + ورود الوصيفات'},en:{n:'Royal Bridal Bouquet',d:'Luxury bridal bouquet + crown + buttonholes + bridesmaids flowers'},p:55000},
+  {id:'w3',e:'🌷',icon:'🌷',ar:{n:'تزيين طاولات الأعراس',d:'تنسيق زهور المائدة × 10 طاولات مع شمعات وأكواب كريستال'},en:{n:'Wedding Tables Decor',d:'Flower centrepieces × 10 tables with candles & crystal vases'},p:95000},
+];
+const SLOTS=[
+  {id:'s1',ar:{t:'7:00–10:00',l:'صباحاً'},en:{t:'7:00–10:00',l:'Morning'},p:500},
+  {id:'s2',ar:{t:'10:00–13:00',l:'الضحى'},en:{t:'10:00–1:00',l:'Late Morning'},p:500},
+  {id:'s3',ar:{t:'13:00–17:00',l:'بعد الظهر'},en:{t:'1:00–5:00 PM',l:'Afternoon'},p:600},
+  {id:'s4',ar:{t:'17:00–21:00',l:'المساء'},en:{t:'5:00–9:00 PM',l:'Evening'},p:700},
+  {id:'s5',ar:{t:'21:00–00:00',l:'الليل'},en:{t:'9:00 PM–12 AM',l:'Night'},p:900},
+];
+let lang='ar',cart={},selSlot='s1',payMethod='cash',hCat='all',pCat='all';
+function fmt(n){return n.toLocaleString('en')+' '+TX[lang].dzd}
+function tgl(){lang=lang==='ar'?'en':'ar';applyLang()}
+function applyLang(){
+  const t=TX[lang];
+  const R=document.getElementById('HR');R.setAttribute('dir',t.dir);R.setAttribute('lang',t.lang);
+  const s=(id,v)=>{const e=document.getElementById(id);if(e)e.innerHTML=v};
+  ['ns','HT','HH','HP','HB1','HB2','PT','PS','HC','HPT','SA','PT2','PKT','EVT','EVW','CT','CNT','cl1','cl2','cl3','cl4','cv4','HH2','D1','D2','D3','BN1','BN2','BN3','BN4','BN5','OT','OS','OC','lb'].forEach(k=>s(k,t[k]));
+  document.querySelectorAll('.chip[data-ar]').forEach(c=>{c.textContent=lang==='ar'?c.getAttribute('data-ar'):c.getAttribute('data-en')});
+  renderAll();
+}
+function pCard(p){
+  const i=p[lang];const b=p.b?`<div class="pbdg">${p.b}</div>`:'';
+  return`<div class="pc" onclick="openP(${p.id})">
+    <div class="pc-img"><img src="${p.img}" alt="${i.n}" loading="lazy" onerror="this.style.display='none'">${b}</div>
+    <div class="pc-body">
+      <div class="pc-name">${i.n}</div>
+      <div class="pc-sub">${i.d.substring(0,44)}…</div>
+      <div class="pc-ft"><div class="pc-price">${fmt(p.p)}</div><button class="pc-add" onclick="event.stopPropagation();addC(${p.id})">+</button></div>
+    </div></div>`;
+}
+function wCard(item){
+  const i=item[lang];
+  return`<div class="wc" data-icon="${item.icon}">
+    <div class="wc-i">${item.e}</div>
+    <div class="wc-b"><div class="wc-n">${i.n}</div><div class="wc-d">${i.d}</div><div class="wc-p">${fmt(item.p)}</div></div>
+    <button class="wc-btn" onclick="bookI('${lang==='ar'?item.ar.n:item.en.n}')">${TX[lang].book}</button>
+  </div>`;
+}
+function renderAll(){rHome();rProd();rPkg();rEvents();renderCart()}
+function rHome(){
+  const f=hCat==='all'?PRODS.slice(0,8):PRODS.filter(p=>p.cat===hCat).slice(0,8);
+  document.getElementById('HG').innerHTML=f.map(pCard).join('');
+  document.getElementById('HPK').innerHTML=PKGS.slice(0,2).map(wCard).join('');
+}
+function rProd(){const f=pCat==='all'?PRODS:PRODS.filter(p=>p.cat===pCat);document.getElementById('PG').innerHTML=f.map(pCard).join('')}
+function rPkg(){document.getElementById('PKL').innerHTML=PKGS.map(wCard).join('')}
+function rEvents(){document.getElementById('EVL').innerHTML=EVENTS.map(wCard).join('');document.getElementById('EVW2').innerHTML=WEDDINGS.map(wCard).join('')}
+function fH(cat,el){hCat=cat;document.querySelectorAll('#hch .chip').forEach(c=>c.classList.remove('on'));if(el)el.classList.add('on');rHome()}
+function fP(cat,el){pCat=cat;document.querySelectorAll('#pch .chip').forEach(c=>c.classList.remove('on'));if(el)el.classList.add('on');rProd()}
+function openP(id){
+  const p=PRODS.find(x=>x.id===id);const i=p[lang];
+  document.getElementById('MT').textContent=i.n;
+  document.getElementById('MI').innerHTML=`<img src="${p.img}" alt="${i.n}" style="width:100%;max-height:240px;object-fit:cover;border-radius:16px">`;
+  document.getElementById('MD').textContent=i.d;
+  document.getElementById('MP').textContent=fmt(p.p);
+  document.getElementById('MC').textContent=TX[lang].addC;
+  document.getElementById('MC').onclick=()=>{addC(id);clMod()};
+  document.getElementById('POV').classList.add('open');
+}
+function clMod(e){if(!e||e.target===document.getElementById('POV'))document.getElementById('POV').classList.remove('open')}
+function addC(id){cart[id]=(cart[id]||0)+1;updBdg();const p=PRODS.find(x=>x.id===id);showT(TX[lang].ta+': '+p[lang].n)}
+function updBdg(){const tot=Object.values(cart).reduce((a,b)=>a+b,0);const b=document.getElementById('cb');b.style.display=tot>0?'flex':'none';b.textContent=tot}
+function chQ(id,d){cart[id]=(cart[id]||0)+d;if(cart[id]<=0)delete cart[id];updBdg();renderCart()}
+function renderCart(){
+  const t=TX[lang];const items=Object.entries(cart).filter(([,q])=>q>0);const el=document.getElementById('cartC');
+  if(items.length===0){el.innerHTML=`<div class="cempty"><div class="ei">🛒</div><p style="font-size:15px;font-weight:700">${t.ec}</p><p style="font-size:12px;color:var(--gray);margin-top:5px">${t.ecs}</p></div>`;return}
+  const sub=items.reduce((s,[id,q])=>s+PRODS.find(p=>p.id==id).p*q,0);
+  const slot=SLOTS.find(s=>s.id===selSlot);const df=slot?slot.p:500;const tot=sub+df;
+  el.innerHTML=`<div class="clist">${items.map(([id,q])=>{const p=PRODS.find(x=>x.id==id);const i=p[lang];return`<div class="crow"><div class="crow-img"><img src="${p.img}" alt="${i.n}" style="width:100%;height:100%;object-fit:cover" onerror="this.parentElement.textContent='🌹'"></div><div class="crow-info"><div class="crow-n">${i.n}</div><div class="crow-p">${fmt(p.p)}</div></div><div class="qw"><button class="qb" onclick="chQ(${id},-1)">−</button><span class="qn">${q}</span><button class="qb" onclick="chQ(${id},1)">+</button></div></div>`}).join('')}</div>
+  <div class="dpick"><div class="dpick-t">${t.dpT}</div><div class="drow">${SLOTS.map(s=>`<div class="dchip ${selSlot===s.id?'on':''}" onclick="pickS('${s.id}')"><div>${s[lang].t}</div><div style="font-size:8px;opacity:.7">${s[lang].l}</div><div style="font-size:9px;color:var(--gold2);font-weight:700">${fmt(s.p)}</div></div>`).join('')}</div></div>
+  <div class="pay-sec"><div class="pay-t">${t.payT}</div><div class="pay-opts"><div class="pay-opt ${payMethod==='cash'?'on':''}" onclick="setPay('cash')"><div class="poi">💵</div><div class="pot">${t.cash}</div><div class="pos">${t.cashS}</div></div><div class="pay-opt ${payMethod==='online'?'on':''}" onclick="setPay('online')"><div class="poi">💳</div><div class="pot">${t.online}</div><div class="pos">${t.onlineS}</div></div></div></div>
+  <div class="cs"><div class="csr"><span>${t.sub}</span><span>${fmt(sub)}</span></div><div class="csr"><span>${t.del}</span><span>${fmt(df)}</span></div><div class="csr tot"><span>${t.tot}</span><span>${fmt(tot)}</span></div><button class="csbtn" onclick="checkout()">${t.checkout}</button></div>
+  <div style="padding:0 11px 8px"><button class="wabtn" onclick="openWA('${lang==='ar'?'مرحباً، أريد إتمام طلبي':'Hello, I want to place an order'}')">💬 ${t.waBtn}</button></div>`;
+}
+function pickS(id){selSlot=id;renderCart()}
+function setPay(m){payMethod=m;renderCart()}
+function openWA(msg){window.open('https://wa.me/97431395338?text='+encodeURIComponent(msg),'_blank')}
+function checkout(){cart={};selSlot='s1';payMethod='cash';updBdg();document.getElementById('OV').classList.add('open')}
+function clOrd(){document.getElementById('OV').classList.remove('open');go('home')}
+function bookI(name){openWA((lang==='ar'?'مرحباً، أريد حجز: ':'Hello, I would like to book: ')+name)}
+function go(name){
+  document.querySelectorAll('.sc').forEach(s=>s.classList.remove('on'));
+  document.querySelectorAll('.bni').forEach(b=>b.classList.remove('on'));
+  document.getElementById('sc-'+name).classList.add('on');
+  const nb=document.getElementById('bn-'+name);if(nb)nb.classList.add('on');
+  if(name==='cart')renderCart();window.scrollTo(0,0);
+}
+function showT(msg){const t=document.getElementById('toast');t.textContent=msg;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),2500)}
+const bl=(navigator.language||'ar').toLowerCase();lang=bl.startsWith('ar')?'ar':'en';applyLang();
+</script>
+</body>
+</html>
